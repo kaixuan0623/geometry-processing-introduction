@@ -77,6 +77,7 @@ routine. Starting in this directory, issue:
     make
 
 if make doesn't work, try:
+
     cmake --build .
 
 Why don't you try this right now?
