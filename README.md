@@ -87,6 +87,10 @@ Why don't you try this right now?
 Once built, you can execute the assignment from inside the `build/` using
 
     ./introduction
+   
+On Window, do
+
+    Debug\introduction.exe
 
 After [compiling according to the instructions above](#compilation), if you try
 executing right now, then you'll see a bunny:
