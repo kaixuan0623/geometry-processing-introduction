@@ -1,7 +1,7 @@
 # Geometry Processing – Introduction
 
 > **To get started:** Clone (**do not fork publicly**) this repository
-> 
+>
 >     git clone --recursive http://github.com/alecjacobson/geometry-processing-introduction.git
 >
 
@@ -21,7 +21,7 @@ compiler on Mac OS X[¹](#¹macusers), Linux[²](#²linuxusers), or
 Windows[³](#³windowsusers).
 
 We also assume that you have cloned this repository using the `--recursive`
-flag (if not then issue `git submodule update --init --recursive`). 
+flag (if not then issue `git submodule update --init --recursive`).
 
 ## Layout
 
@@ -74,13 +74,16 @@ routine. Starting in this directory, issue:
     mkdir build
     cd build
     cmake ..
-    make 
+    make
+
+if make doesn't work, try:
+    cmake --build .
 
 Why don't you try this right now?
 
 ## Execution
 
-Once built, you can execute the assignment from inside the `build/` using 
+Once built, you can execute the assignment from inside the `build/` using
 
     ./introduction
 
@@ -109,18 +112,18 @@ mesh vertices <img src="/tex/a9a3a4a202d80326bda413b5562d5cd1.svg?invert_in_dark
 faces) <img src="/tex/b8bc815b5e9d5177af01fd4d3d3c2f10.svg?invert_in_darkmode&sanitize=true" align=middle width=12.85392569999999pt height=22.465723500000017pt/> as two matrices: `V` and `F`.
 
 The matrix `V` is <img src="/tex/4716870f3f422e3e30698c2aa13917a6.svg?invert_in_darkmode&sanitize=true" align=middle width=22.37447849999999pt height=24.65753399999998pt/> by 3 in size, where the ith row of this matrix contains
-the x-, y- and z-coordinates of the ith vertex of the mesh. 
+the x-, y- and z-coordinates of the ith vertex of the mesh.
 
 The matrix `F` is <img src="/tex/92991de2a74552da6902a11d444ace8a.svg?invert_in_darkmode&sanitize=true" align=middle width=21.986370449999992pt height=24.65753399999998pt/> by 3 in size, where the jth row of this matrix contains
 the indices into the rows of `V` of the first, second and third corners of the
 jth triangle as a non-negative number (remember in C++ arrays and matrices
-start with index `0`). 
+start with index `0`).
 
 The information in `V` alone is purely positional and encodes the
 _geometry_ of the surface.
 
 The information in `F` alone is purely combinatoric and encodes the _topology_
-of the surface. 
+of the surface.
 
 By convention, the indices in each row of `F` are _ordered_ counter-clockwise
 around the triangle. Using the right-hand rule, we can define the normal of
@@ -143,7 +146,7 @@ The number of vertices <img src="/tex/4716870f3f422e3e30698c2aa13917a6.svg?inver
 (undirected) edges <img src="/tex/6f1489510ace7328313aebec5fc3c626.svg?invert_in_darkmode&sanitize=true" align=middle width=22.21462484999999pt height=24.65753399999998pt/> are _intimately_ related. Adding a new triangle to a
 mesh may mean increasing the number of vertices and edges, too. The algebraic
 relationship between the number of vertices, edges and faces reveals the
-topological _genus_ of the surface via the _Euler Characteristic_ 
+topological _genus_ of the surface via the _Euler Characteristic_
 
 <p align="center"><img src="/tex/5f44d895386d2bb0121dc78eb7e09862.svg?invert_in_darkmode&sanitize=true" align=middle width=102.1782729pt height=14.611878599999999pt/></p>
 
@@ -197,7 +200,7 @@ For this assignment you may not use
 From a list of triangles `F`, construct a <img src="/tex/6f1489510ace7328313aebec5fc3c626.svg?invert_in_darkmode&sanitize=true" align=middle width=22.21462484999999pt height=24.65753399999998pt/> by 2 matrix `E`, where the kth
 row of this matrix contains the indices into the rows of `V` of the start and
 end point of the kth edge in the mesh. `E` should contain every _undirected
-edge_ exactly once. 
+edge_ exactly once.
 
 ### `src/euler_characteristic.cpp`
 
@@ -209,7 +212,7 @@ taks.
 
 Submit your `src/` files on [MarkUs](https://markus.teach.cs.toronto.edu/csc419-2020-09/)
 
-### Questions? 
+### Questions?
 
 Direct your questions to the [Issues page of this
 repository](https://github.com/alecjacobson/geometry-processing-introduction/issues).
@@ -224,7 +227,7 @@ repository](https://github.com/alecjacobson/geometry-processing-introduction/iss
 
 > #### ¹ Mac Users
 >
-> You will need to install Xcode if you haven't already. 
+> You will need to install Xcode if you haven't already.
 >
 > #### ² Linux Users
 >
